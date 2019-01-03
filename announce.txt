@@ -1,0 +1,12 @@
+1.前端的开发是在view这个文件夹下面。文件的后缀为.ejs
+js，css和image在public的文件夹下。建不同的文件夹存不同的js，css和image
+前端得到的数据用<%=title%>这样的方式获得
+
+2.后端在server下面
+
+3.
+blog_tbl中有id，title，content，html，date，kind，tag
+tag_tbl中有tagId，tag
+
+由李云皓学长，张壬泓，蔡铭三人开发
+2018.12

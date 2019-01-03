@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BLOG</title>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/Search.css"  rel="stylesheet">
+</head>
+<script src="/js/jquery.min.js"></script>
+<!---bootstrap的核心JS文件必须放在jQuery文件之后，因为bootstrap基于jQuery -->
+<script src="/js/bootstrap.min.js"></script>
+<body>
+<div class="row bg" style="height: 700px;">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <!------button为实现响应式布局，如果在手机上查看，点击button就可以弹出菜单---->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">ShareGIS</a><!---log的地方-->
+            </div>
+            <!-- 当浏览器小于某个值时，点击button图标显示导航条的内容（注意这里的id与button 的id对应）—>
+               <!--具体菜单项-->
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+                <ul class="nav navbar-nav" style="margin-left: 70px;">
+                    <li><a href="my">首页 <span class="sr-only">(current)</span></a></li><!--普通菜单-->
+                    <li><a href="timeline"><i class="glyphicon glyphicon-calendar"></i>&nbsp;归档</a></li>
+                    <li><a href="tags"><i class="glyphicon glyphicon-tags"></i>&nbsp;&nbsp;标签</a></li>
+                    <li><a href="Category"><i class="glyphicon glyphicon-th"></i>&nbsp;分类</a></li>
+                    <li  class="active"><a href="Search"><i class="glyphicon glyphicon-search"></i>&nbsp;搜索</a></li>
+                    <li><a href="Speakings"><i class="glyphicon glyphicon-comment"></i>&nbsp;留言板</a></li>
+                    <li ><a href="About"><i class="glyphicon glyphicon-user"></i>&nbsp;关于我</a></li>
+
+                </ul>
+
+            </div><!-- /.container-fluid -->
+        </div>
+    </nav>
+    <div style="height: 180px;"></div>
+    <div style="margin-bottom: 50px;">
+        <h1 class="text-center" style="font-size: 80px;"><b>S</b>earch</h1>
+    </div>
+        <div class="col-lg-6  col-lg-offset-3 col-md-6 col-sm-10 col-xs-10  col-md-offset-3 col-xs-offset-1 col-smxs-offset-1">
+            <form>
+            <div class="input-group" >
+
+                <input type="text" id = "key"class="form-control" style="height: 45px;">
+                <span class="input-group-btn">
+						<button id = "go" onclick = "click_fn()" class="btn btn-default" style="background-color:cornflowerblue;height: 45px; width: 60px;" type="button">
+                            <span style="font-size: 18px;">Go!</span>
+						</button>
+					</span>
+            </div>
+            </form>
+        </div>
+</div>
+
+</section>
+<script>
+    function click_fn(){
+        var key=document.getElementById('key').value;
+        window.location.href = "./Searchfind?key=" + key;
+    }
+</script>
+<!--<div class="container">-->
+
+    <!--<div class="row"style=" margin-top: 20px;">-->
+
+        <!--<div class=" col-md-offset-2 col-md-8 col-sm-12">-->
+            <!--<h2><span class="label  label-success">搜索结果</span></h2>-->
+            <!--<article  class="post a1">-->
+                <!--<div class="post-head">-->
+                    <!--<h1 class="post-title"><a href="#">Android 版 Ghost 客户端来了！</a></h1>-->
+                    <!--<div class="post-meta">-->
+         <!--<span class="meta">-->
+             <!--<time class="time"><i class="glyphicon glyphicon-time"></i> &nbsp;&nbsp;2016-10-14</time>-->
+             <!--<span class="views">&nbsp;&nbsp;浏览量&nbsp;&nbsp;<i class="glyphicon glyphicon-eye-open"></i>&nbsp; 216</span>-->
+             <!--<span class="comment"  title="评论" target="_blank" >评论&nbsp;&nbsp;<i class="glyphicon glyphicon-comment"></i> 4</span>-->
+         <!--</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="post-content">-->
+                    <!--<p>Ghost 从一开始就支持响应式 Web 使用体验，但是我们今天仍然向前迈出了一大步 &#45;&#45; 推出 Android 平台原生 APP ！ 我们一直试图为 Ghost 用户构建一个可靠的移动端 Web 体验，但不可避免地，它在它所能做的事情上仍然是相当受限的。即便是在 2017 年的</p>-->
+                <!--</div>-->
+                <!--<div class="post-permalink">-->
+                    <!--<a href="#" class="btn btn-default">阅读全文</a>-->
+                <!--</div>-->
+                <!--<footer class="post-footer clearfix">-->
+                    <!--<div class="pull-left">-->
+                        <!--<i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;<span>前端</span>&nbsp;&nbsp;-->
+                        <!--<i class="glyphicon glyphicon-tag"></i>&nbsp;&nbsp;<a class="tag" target="_blank" ><span class="label label-info">Javascript</span></a>-->
+                    <!--</div>-->
+                <!--</footer>-->
+            <!--</article>-->
+        <!--</div>-->
+        <!--<div class=" col-md-offset-2 col-md-8 col-sm-12" >-->
+            <!--<article  class="post a1">-->
+                <!--<div class="post-head">-->
+                    <!--<h1 class="post-title"><a href="#">Android 版 Ghost 客户端来了！</a></h1>-->
+                    <!--<div class="post-meta">-->
+         <!--<span class="meta">-->
+             <!--<time class="time"><i class="glyphicon glyphicon-time"></i> &nbsp;&nbsp;2016-10-14</time>-->
+             <!--<span class="views">&nbsp;&nbsp;浏览量&nbsp;&nbsp;<i class="glyphicon glyphicon-eye-open"></i>&nbsp; 216</span>-->
+             <!--<span class="comment"  title="评论" target="_blank" >评论&nbsp;&nbsp;<i class="glyphicon glyphicon-comment"></i> 4</span>-->
+         <!--</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="post-content">-->
+                    <!--<p>Ghost 从一开始就支持响应式 Web 使用体验，但是我们今天仍然向前迈出了一大步 &#45;&#45; 推出 Android 平台原生 APP ！ 我们一直试图为 Ghost 用户构建一个可靠的移动端 Web 体验，但不可避免地，它在它所能做的事情上仍然是相当受限的。即便是在 2017 年的</p>-->
+                <!--</div>-->
+                <!--<div class="post-permalink">-->
+                    <!--<a href="#" class="btn btn-default">阅读全文</a>-->
+                <!--</div>-->
+                <!--<footer class="post-footer clearfix">-->
+                    <!--<div class="pull-left">-->
+                        <!--<i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;<span>前端</span>&nbsp;&nbsp;-->
+                        <!--<i class="glyphicon glyphicon-tag"></i>&nbsp;&nbsp;<a class="tag" target="_blank" ><span class="label label-info">Javascript</span></a>-->
+                    <!--</div>-->
+                <!--</footer>-->
+            <!--</article>-->
+        <!--</div>-->
+
+  <!--</div>-->
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

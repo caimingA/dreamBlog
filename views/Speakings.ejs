@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--device-width自适应移动端宽度，initial-scale=1不进行缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>BLOG</title>
+    <!-- Bootstrap 核心样式文件 -->
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+
+
+    <link href="/stylesheets/Speakings.css"  rel="stylesheet">
+
+</head>
+<body data-spy="scroll" data-target="sidebarMenu">
+
+
+
+<script src="/js/"></script>
+<script src="/js/jquery.min.js"></script>
+<!---bootstrap的核心JS文件必须放在jQuery文件之后，因为bootstrap基于jQuery -->
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-----------------------------------------导航条设计开始--------------------------------->
+<!--黑色导航条样式为navbar-inverse，白色样式为default ，.navbar-fixed-top导航条固定在顶端-->
+<div class="row bg3">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <!------button为实现响应式布局，如果在手机上查看，点击button就可以弹出菜单---->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">ShareGIS</a><!---log的地方-->
+            </div>
+            <!-- 当浏览器小于某个值时，点击button图标显示导航条的内容（注意这里的id与button 的id对应）—>
+               <!--具体菜单项-->
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+                <ul class="nav navbar-nav" style="margin-left: 70px;">
+                    <li ><a href="my">首页 <span class="sr-only">(current)</span></a></li><!--普通菜单-->
+                    <li><a href="timeline"><i class="glyphicon glyphicon-calendar"></i>&nbsp;归档</a></li>
+                    <li><a href="tags"><i class="glyphicon glyphicon-tags"></i>&nbsp;&nbsp;标签</a></li>
+                    <li ><a href="Category"><i class="glyphicon glyphicon-th"></i>&nbsp;分类</a></li>
+                    <li  ><a href="Search"><i class="glyphicon glyphicon-search"></i>&nbsp;搜索</a></li>
+                    <li class="active"><a href="Speakings"><i class="glyphicon glyphicon-comment"></i>&nbsp;留言板</a></li>
+                    <li  ><a href="About"><i class="glyphicon glyphicon-user"></i>&nbsp;关于我</a></li>
+                </ul>
+
+            </div><!-- /.container-fluid -->
+        </div>
+    </nav>
+
+    <div  style="height: 200px;"></div>
+    <div style="height: 400px;">
+        <section class="container-fluid" >
+            <div >
+                <h1 class="text-center">My BloG</h1>
+                <h1 class="text-center ">Change It To Say <b>Something</b> Unique</h1>
+            </div>
+            <div style="height: 70px;"></div>
+            <div class="container " style=" margin: auto">
+                <div class="row text-center ">
+                    <ul class="col-xs-offset-3 col-xs-6 ">
+                        <li style="display: inline">
+                            <a   href="https://user.qzone.qq.com/2084859617"><img class="center-block Brand" src="/imgs/qq.png"> </a>
+                        </li> &nbsp;
+                        <li style="display: inline">
+                            <a  href="#"><img class=" center-block Brand" src="/imgs/Twitter.png"/></a>
+                        </li>
+                        &nbsp;
+                        <li style="display: inline">
+                            <a  href="#"><img class="Brand" src="/imgs/facebook.png"></a>
+                        </li>
+                        &nbsp;
+                        <li  style="display: inline">
+                            <a  href="#"><img class=" Brand" src="/imgs/GitHub.png"></a>
+                        </li>
+                        &nbsp;
+                        <li  style="display: inline">
+                            <a  href="#"><img class="Brand" src="/imgs/csdn%20(1).png"></a>
+                        </li>
+                        &nbsp;
+                        <li style="display: inline">
+                            <a  href="#"><img class="Brand" src="/imgs/微博.png"></a>
+                        </li>
+                    </ul></div>
+                <div style="height: 50px;"></div>
+            </div>
+        </section>
+    </div>
+    <!------------------------------------------导航条结束-------------------------------->
+</div>
+
+<div class="container-fluid" style="margin-top: 50px">
+    <div class="col-md-6 col-lg-6 col-md-offset-1 col-lg-offset-1 col-sm-12 col-xs-12 chip-container">
+        <div id="msgBox">
+            <form>
+                <h2 style="padding-top: -10px;"><i class="glyphicon glyphicon-globe"></i>欢迎留下对本博客的意见&nbsp;  一起探讨技术</h2>
+                <div>
+                   <span>昵称：</span> <input id="userName" class="f-text" value="" />
+                </div>
+                <div><span>内容：</span><textarea id="conBox" class="f-text"></textarea></div>
+                <div class="tr">
+                    <p>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <span class="countTxt" >还能输入</span><strong class="maxNum">140</strong><span>个字</span>
+
+                        <input id="sendBtn" type="button" value="留言" style="font-weight:bold;color: black; border-radius: 5px;" title="快捷键 Ctrl+Enter" />
+                    </p>
+                </div>
+            </form>
+            <div class="list">
+                <h3><span>畅所欲言</span></h3>
+                <ul>
+
+                    <li>
+
+                        <div class="content">
+                            <div class="userName">Cythnia:</div>
+                            <div class="msgInfo">Ctrl+Enter快捷键可以留言啦</div>
+                            <div class="times"><span>12月05日 12:20</span></div>
+
+                        </div>
+                    </li>
+                    <li>
+
+                        <div class="content">
+                            <div class="userName"><a href="javascript:;">May</a>:</div>
+                            <div class="msgInfo">我对你的博客很感兴趣，可以加个qq么？QWQ</div>
+
+                            <div class="times"><span>12月05日 12:08</span></div>
+                        </div>
+                    </li>
+                    <li>
+
+                        <div class="content">
+                            <div class="userName"><a href="javascript:;">Cythnia</a>:</div>
+
+                            <div class="msgInfo">分享技术心得 共同进步</div>
+                            <div class="times"><span>12月04日 16:55</span></div>
+                        </div>
+                    </li>
+
+                    <li>
+
+                        <div class="content">
+                            <div class="userName"><a href="javascript:;">Cythnia</a>:</div>
+                            <div class="msgInfo">欢迎大家畅所欲言！</div>
+                            <div class="times"><span>11月03日 20:19</span></div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1 col-lg-1  hidden-sm hidden-xs "  ></div>
+    <div class="col-md-4 hidden-xs hidden-sm col-lg-4" id="site-info">
+        <section class="site-overview " style="opacity: 1; display: block; transform: translateY(0px);">
+            <div class="site-author">
+                <img class="site-author-image center-block" src="/imgs/b.jpg" style="height: 70px; width:70px; border: #0f0f0f 1px solid ">
+                <p class="site-author-name text-center">Cythnia</p>
+                <p class="site-description  text-center">Stay hungry! Stay foolish!</p>
+            </div>
+            <nav class="site-state ">
+                <div class="site-state-item site-state-posts">
+                    <a href="#">
+                        <span class="site-state-item-count">15</span>
+                        <span class="site-state-item-name">articles</span>
+                    </a>
+                </div>
+
+
+                <div class="site-state-item site-state-categories">
+                    <a href="#">
+                        <span class="site-state-item-count">4</span>
+                        <span class="site-state-item-name">categories</span>
+                    </a>
+                </div>                <div class="site-state-item site-state-categories">
+                <a href="#">
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">tags</span>
+                </a>
+            </div>
+
+            </nav>
+            <div class="feed-link motion-element center-block" style="width: 60%;">
+                <a href="/rss2.xml" rel="alternate">
+                    RSS
+                </a>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+<script src="/js/Speakings.js"></script>
+<SCRIPT>
+    $('.container-fluid').hide();
+    $(window).load(function(event){
+        setTimeout(function () {
+            $(".container-fluid").fadeIn(300);
+        }, 500);
+    })
+    $(document).ready(function () {
+        var menuYloc = $("#site-info").offset().top;
+        $(window).scroll(function () {
+            var offsetTop = menuYloc + $(window).scrollTop()-1100;
+
+            if(offsetTop < 0){
+                offsetTop = 0;
+            }else{
+                offsetTop = menuYloc + $(window).scrollTop()-1100;
+            }
+            offsetTop+=  "px";
+            // console.log(offsetTop);
+            $("#site-info").animate({ top: offsetTop }, { duration: 300, queue: false });
+        });
+    });
+</SCRIPT>
+
+</html>

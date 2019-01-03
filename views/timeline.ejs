@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--不支持老版本IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--device-width自适应移动端宽度，initial-scale=1不进行缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>BLOG</title>
+    <!-- Bootstrap 核心样式文件 -->
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/timeline.css" rel="stylesheet">
+
+
+<style>
+
+</style>
+</head>
+<body data-spy="scroll" data-target="sidebarMenu">
+
+
+
+
+
+<script src="/js/jquery.min.js"></script>
+<!---bootstrap的核心JS文件必须放在jQuery文件之后，因为bootstrap基于jQuery -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-----------------------------------------导航条设计开始--------------------------------->
+<!--黑色导航条样式为navbar-inverse，白色样式为default ，.navbar-fixed-top导航条固定在顶端-->
+<div class="row bg3">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <!------button为实现响应式布局，如果在手机上查看，点击button就可以弹出菜单---->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">ShareGIS</a><!---log的地方-->
+            </div>
+            <!-- 当浏览器小于某个值时，点击button图标显示导航条的内容（注意这里的id与button 的id对应）—>
+               <!--具体菜单项-->
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+                <ul class="nav navbar-nav" style="margin-left: 70px;">
+                    <li><a href="my">首页 <span class="sr-only">(current)</span></a></li><!--普通菜单-->
+                    <li ><a href="timeline"><i class="glyphicon glyphicon-calendar"></i>&nbsp;归档</a></li>
+                    <li ><a href="tags"><i class="glyphicon glyphicon-tags"></i>&nbsp;&nbsp;标签</a></li>
+                    <li ><a href="Category"><i class="glyphicon glyphicon-th"></i>&nbsp;分类</a></li>
+                    <li  ><a href="Search"><i class="glyphicon glyphicon-search"></i>&nbsp;搜索</a></li>
+                    <li><a href="Speakings"><i class="glyphicon glyphicon-comment"></i>&nbsp;留言板</a></li>
+                    <li ><a href="About"><i class="glyphicon glyphicon-user"></i>&nbsp;关于我</a></li>
+                </ul>
+
+            </div><!-- /.container-fluid -->
+        </div>
+    </nav>
+
+    <div  style="height: 200px;"></div>
+    <div style="height: 400px;">
+        <section class="container-fluid" >
+            <div >
+                <h1 class="text-center" id="t">My BloG</h1>
+                <h1 class="text-center ">Change It To Say <b>Something</b> Unique</h1>
+            </div>
+            <div style="height: 70px;"></div>
+            <div class="container " style=" margin: auto">
+                <div class="row text-center ">
+                    <ul class="col-xs-offset-3 col-xs-6 ">
+                        <li style="display: inline">
+                            <a   href="https://user.qzone.qq.com/2084859617"><img class="center-block Brand" src="/imgs/qq.png"> </a>
+                        </li> &nbsp;
+                        <li style="display: inline">
+                            <a  href="#"><img class=" center-block Brand" src="/imgs/Twitter.png"/></a>
+                        </li>
+                        &nbsp;
+                        <li style="display: inline">
+                            <a  href="#"><img class="Brand" src="/imgs/facebook.png"></a>
+                        </li>
+                        &nbsp;
+                        <li  style="display: inline">
+                            <a  href="#"><img class=" Brand" src="/imgs/GitHub.png"></a>
+                        </li>
+                        &nbsp;
+                        <li  style="display: inline">
+                            <a  href="#"><img class="Brand" src="/imgs/csdn%20(1).png"></a>
+                        </li>
+                        &nbsp;
+                        <li style="display: inline">
+                            <a  href="#"><img class="Brand" src="/imgs/微博.png"></a>
+                        </li>
+                    </ul></div>
+                <div style="height: 50px;"></div>
+            </div>
+        </section>
+    </div>
+    <!------------------------------------------导航条结束-------------------------------->
+</div>
+
+<div class="container-fluid" style="margin-top: 50px">
+    <div class="col-md-6 col-lg-6 col-md-offset-1 col-lg-offset-1 col-sm-12 col-xs-12">
+        <div id="layout-archive-year" style="display:
+
+			block">
+
+
+            <ul>
+
+                <h3 class="2018 title-bg" >2018<em>(<%= json.length %>篇)</em></h3><div year="2018">
+                <% for(var i = 0; i < json.length; i++){ %>
+                <li>
+                    <a  class="" href="Arctile?id=<%= json[i].id %>" itemprop="url">
+                        <em year="2018">
+                            <%= json[i].date %>
+                        </em>
+                        <span itemprop="name"><%= json[i].title %></span>
+                    </a>
+                </li>
+                <% } %>
+
+
+
+
+            </li>
+                <!--<li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/11/04/前端入门学习一/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--11-04-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">前端入门学习一</span>-->
+
+
+
+                <!--</a><a href="/tags/前端/" class="tag">-->
+                <!--前端-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/10/02/山鬼情书之零/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--10-02-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">山鬼情书之零</span>-->
+
+
+
+                <!--</a><a href="/tags/日记/" class="tag">-->
+                <!--日记-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/09/25/Annie主题更新日志/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--09-25-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">Annie主题更新日志</span>-->
+
+
+
+                <!--</a><a href="/tags/开发实践/" class="tag">-->
+                <!--开发实践-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/09/21/toc标题测试/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--09-21-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">toc标题测试</span>-->
+
+
+
+                <!--</a><a href="/tags/开发实践/" class="tag">-->
+                <!--开发实践-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/09/08/起风了/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--09-08-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">起风了</span>-->
+
+
+
+                <!--</a><a href="/tags/音乐/" class="tag">-->
+                <!--音乐-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/08/27/Annie主题使用说明/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--08-27-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">Annie主题使用说明</span>-->
+
+
+
+                <!--</a><a href="/tags/说明/" class="tag">-->
+                <!--说明-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/08/10/博客开发问题记录/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--08-10-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">博客开发问题记录</span>-->
+
+
+
+                <!--</a><a href="/tags/开发实践/" class="tag">-->
+                <!--开发实践-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/08/06/hexo-theme-Annie/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--08-06-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">hexo-theme-Annie</span>-->
+
+
+
+                <!--</a><a href="/tags/开发实践/" class="tag">-->
+                <!--开发实践-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/08/02/Github入门术语/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--08-02-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">Github入门术语</span>-->
+
+
+
+                <!--</a><a href="/tags/Github入门/" class="tag">-->
+                <!--Github入门-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/07/31/That-boy/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--07-31-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">That boy</span>-->
+
+
+
+                <!--</a><a href="/tags/音乐/" class="tag">-->
+                <!--音乐-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/07/30/博客功能扩展/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--07-30-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">博客功能扩展</span>-->
+
+
+
+                <!--</a><a href="/tags/开发实践/" class="tag">-->
+                <!--开发实践-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/07/26/李白诗选/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--07-26-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">李白诗选</span>-->
+
+
+
+                <!--</a>-->
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/07/25/秦时明月/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--07-25-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">秦时明月</span>-->
+
+
+
+                <!--</a>-->
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/07/18/跨站脚本攻击/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--07-18-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">跨站脚本攻击</span>-->
+
+
+
+                <!--</a><a href="/tags/计算机实验/" class="tag">-->
+                <!--计算机实验-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/07/14/安装centos操作系统/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--07-14-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">安装centos操作系统</span>-->
+
+
+
+                <!--</a><a href="/tags/centos/" class="tag">-->
+                <!--centos-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/06/08/中文测试/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--06-08-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">中文测试</span>-->
+
+
+
+                <!--</a><a href="/tags/文学/" class="tag">-->
+                <!--文学-->
+            <!--</a>-->
+
+
+
+                <!--<a href="/tags/情怀/" class="tag">-->
+                    <!--情怀-->
+                <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/05/01/hexo主题添加评论功能/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--05-01-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">[post]hexo主题添加评论功能</span>-->
+
+
+
+                <!--</a>-->
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/04/30/中文测试二/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--04-30-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">[post]中文测试二</span>-->
+
+
+
+                <!--</a><a href="/tags/纳兰性德/" class="tag">-->
+                <!--纳兰性德-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/04/30/中文测试一/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--04-30-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">[post]中文测试一</span>-->
+
+
+
+                <!--</a><a href="/tags/崔护诗选/" class="tag">-->
+                <!--崔护诗选-->
+            <!--</a>-->
+
+
+
+
+
+            <!--</li><li class="" itemscope="" itemtype="http://schema.org/Article" year="2018">-->
+                <!--<a class="" href="/2018/03/31/hello-world/" itemprop="url">-->
+                    <!--<em year="2018">-->
+                        <!--03-31-->
+                    <!--</em>-->
+                    <!--<span itemprop="name">Hello World</span>-->
+
+
+
+                <!--</a>-->
+
+            <!--</li>-->
+            </div>
+            </ul>
+        </div>
+        <ul class="pager">
+            <li class="previous"><a href="#">&larr; 上一年</a></li>
+            <li class="next"><a href="#">下一年 &rarr;</a></li>
+        </ul>
+    </div>
+
+    <div class="col-md-1 col-lg-1  hidden-sm hidden-xs "  ></div>
+    <div class="col-md-4 hidden-xs hidden-sm col-lg-4 " id="site-info" >
+        <section class="site-overview " style="opacity: 1; display: block; transform: translateY(0px);">
+            <div class="site-author">
+                <img class="site-author-image center-block" src="/imgs/b.jpg" style="height: 70px; width:70px; border: #0f0f0f 1px solid ">
+                <p class="site-author-name text-center">Cythnia</p>
+                <p class="site-description  text-center">Stay hungry! Stay foolish!</p>
+            </div>
+            <nav class="site-state ">
+                <div class="site-state-item site-state-posts">
+                    <a href="#">
+                        <span class="site-state-item-count">15</span>
+                        <span class="site-state-item-name">articles</span>
+                    </a>
+                </div>
+                <div class="site-state-item site-state-categories">
+                    <a href="#">
+                        <span class="site-state-item-count">4</span>
+                        <span class="site-state-item-name">categories</span>
+                    </a>
+                </div>                <div class="site-state-item site-state-categories">
+                <a href="#">
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">tags</span>
+                </a>
+            </div>
+
+            </nav>
+            <div class="feed-link motion-element center-block" style="width: 60%;">
+                <a href="/rss2.xml" rel="alternate">
+                    RSS
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+<SCRIPT>
+    $('.container-fluid').hide();
+    $(window).load(function(event){
+        setTimeout(function () {
+            $(".container-fluid").fadeIn(300);
+        }, 500);
+    })
+    $(document).ready(function () {
+        var menuYloc = $("#site-info").offset().top;
+        $(window).scroll(function () {
+            var offsetTop = menuYloc + $(window).scrollTop()-1100;
+
+            if(offsetTop < 0){
+                offsetTop = 0;
+            }else{
+                offsetTop = menuYloc + $(window).scrollTop()-1100;
+            }
+            offsetTop+=  "px";
+            // console.log(offsetTop);
+            $("#site-info").animate({ top: offsetTop }, { duration: 300, queue: false });
+        });
+    });
+</SCRIPT>
+
+
+</body>
+
+
+</html>

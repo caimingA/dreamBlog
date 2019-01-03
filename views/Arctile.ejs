@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--不支持老版本IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--device-width自适应移动端宽度，initial-scale=1不进行缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title><%= json.title %></title>
+    <!-- Bootstrap 核心样式文件 -->
+
+
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/jquery.autoMenu.css" rel="stylesheet">
+    <link href="/stylesheets/Art.css" rel="stylesheet">
+
+</head>
+<body data-spy="scroll" data-target="sidebarMenu">
+
+
+<script src="/js/jquery.min.js"></script>
+<!---bootstrap的核心JS文件必须放在jQuery文件之后，因为bootstrap基于jQuery -->
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.autoMenu.js"></script>
+
+
+
+<!-----------------------------------------导航条设计开始--------------------------------->
+<!--黑色导航条样式为navbar-inverse，白色样式为default ，.navbar-fixed-top导航条固定在顶端-->
+<div class="row bg">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <!------button为实现响应式布局，如果在手机上查看，点击button就可以弹出菜单---->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">ShareGIS</a><!---log的地方-->
+            </div>
+            <!-- 当浏览器小于某个值时，点击button图标显示导航条的内容（注意这里的id与button 的id对应）—>
+               <!--具体菜单项-->
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+                <ul class="nav navbar-nav" style="margin-left: 70px;">
+                    <li class="active"><a href="my">首页 <span class="sr-only">(current)</span></a></li><!--普通菜单-->
+                    <li><a href="timeline"><i class="glyphicon glyphicon-calendar"></i>&nbsp;归档</a></li>
+                    <li><a href="tags"><i class="glyphicon glyphicon-tags"></i>&nbsp;&nbsp;标签</a></li>
+                    <li><a href="Category"><i class="glyphicon glyphicon-th"></i>&nbsp;分类</a></li>
+                    <li  ><a href="Search"><i class="glyphicon glyphicon-search"></i>&nbsp;搜索</a></li>
+                    <li><a href="Speakings"><i class="glyphicon glyphicon-comment"></i>&nbsp;留言板</a></li>
+                    <li ><a href="About"><i class="glyphicon glyphicon-user"></i>&nbsp;关于我</a></li>
+                </ul>
+
+            </div><!-- /.container-fluid -->
+        </div>
+    </nav>
+
+    <div style="height: 150px;"></div>
+    <div style="height: 350px;">
+        <section class="container-fluid" >
+            <div class="post-header text-center">
+                <div class="tags">
+                    <!--标签循环-->
+                    <% for(var i = 0; i < (JSON.parse(json.tag)).length; i++){ %>
+                    <a  rel="tag" title=<%= JSON.parse(json.tag)[i] %>><%= JSON.parse(json.tag)[i]%></a>
+
+                    <!--<a  rel="tag" title="Vue.js">Vue.js</a>-->
+
+                    <!--<a rel="tag" title="CSS">CSS</a>-->
+
+                    <!--<a  rel="tag" title="scoped">scoped</a>-->
+                    <% } %>
+                </div>
+                <h1 class="text-center " id="bigtitle" style=" font-size: 50px; margin-top:50px;padding-left: 20%;padding-right: 20%; color: white ; overflow: hidden; height: 200px;"><%= json.title %></h1>
+                <time class="text-center "  style=" font-size: 30px; padding-left: 25%;padding-right: 25%; color: white ; overflow: hidden; height: 200px;"><%= json.date %></time>
+            </div>
+            <div style="height: 70px;"></div>
+
+        </section>
+    </div>
+    <!------------------------------------------导航条结束-------------------------------->
+</div>
+
+<div class="container-fluid" style="margin-top: 50px">
+    <div class="col-md-6 col-lg-6 col-md-offset-1 col-lg-offset-1 col-sm-12 col-xs-12 chip-container" style="box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important; border-radius: 10px;">
+
+    <div class="passage">
+        <div class="post-body" itemprop="articleBody">
+
+            <h1 ><%= json.title %></h1>
+            <a id="more"></a>
+            <%- json.html %>
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <div class="col-md-1 col-lg-1  hidden-sm hidden-xs "  ></div>
+    <div class="col-md-4 hidden-xs hidden-sm col-lg-4 " id="site-info" >
+
+        <section class="site-overview " style="opacity: 1; display: block; transform: translateY(0px);">
+            <div class="site-author">
+                <img class="site-author-image center-block" src="/imgs/b.jpg" style="height: 70px; width:70px; border: #0f0f0f 1px solid ">
+                <p class="site-author-name text-center">Cythnia</p>
+                <p class="site-description  text-center">Stay hungry! Stay foolish!</p>
+            </div>
+            <nav class="site-state ">
+                <div class="site-state-item site-state-posts">
+                    <a href="#">
+                        <span class="site-state-item-count">15</span>
+                        <span class="site-state-item-name">articles</span>
+                    </a>
+                </div>
+
+
+                <div class="site-state-item site-state-categories">
+                    <a href="#">
+                        <span class="site-state-item-count">4</span>
+                        <span class="site-state-item-name">categories</span>
+                    </a>
+                </div>                <div class="site-state-item site-state-categories">
+                <a href="#">
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">tags</span>
+                </a>
+            </div>
+
+            </nav>
+            <div class="feed-link motion-element center-block" style="width: 60%;">
+                <a href="/rss2.xml" rel="alternate">
+                    RSS
+                </a>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<div class="autoMenu hidden-xs" id="autoMenu" data-autoMenu> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+<SCRIPT>
+    $('.container-fluid').hide();
+    $(window).load(function(event){
+        setTimeout(function () {
+            $(".container-fluid").fadeIn(300);
+        }, 500);
+    })
+
+
+
+</SCRIPT>
+</html>
